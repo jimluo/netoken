@@ -1,6 +1,6 @@
 # 基于Rust和BPF技术的网络TCP水印
 
-网络水印用于防DDoS攻击和网络流量等安全领域，原理是给报文增加特征信息，基于TCP options的增加字段不会被防火墙等修改去除，本文正是使用BPF和Rust来达到高效的实现的具体描述。[^1] 源码参见[]
+网络水印用于防DDoS攻击和网络流量等安全领域，原理是给报文增加特征信息，基于TCP options的增加字段不会被防火墙等修改去除，本文正是使用BPF和Rust来达到高效的实现的具体描述。
 **保护知识产权的图片水印不在此列**
 
 - BPF驱动使用c开发
@@ -527,5 +527,3 @@ get()->target_dir, metadata.target_directory.into_std_path_buf()
     轮询所有package后，if id == &package.id 
     get_package() 
 ```
-
-[^1]: [netoken](https://github.com/jimluo/netoken)
