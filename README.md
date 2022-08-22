@@ -8,7 +8,7 @@
 
 
 ## 依赖封装关系
-![关系图](../images/net-token/libbpf-rs-dependency.png)
+![关系图](https://jimluo.github.io/images/net-token/libbpf-rs-dependency.png)
 
 基于libbpf-rs开发, libbpf-rs提供用于开发的API抽象，包括驱动object和其静态程序、通讯、挂载上程序的资源抽象
 
@@ -76,7 +76,7 @@ libbpf-cargo = { path = "../libbpf-rs/libbpf-cargo" }
    - bpf_perf/kprob/uprobe/tracepoint/link_xdp/tc_hook
 
 ## 用户态加载流程
-![用户态关系图](../images/net-token/libbpf-rs-usermode.png)
+![用户态关系图](https://jimluo.github.io/images/net-token/libbpf-rs-usermode.png)
 1. 解析命令行参数中的网卡名，并获取其系统中的网卡号
 2. 使用生成的skelBuilder逐步获取驱动object的内存文件描述符fd
 3. 使用生成的hookBuilder创建并将自己hook在网络出入口egress/ingress。本程序只使用了egress
@@ -158,7 +158,7 @@ $ tc qdisc show dev xxx
 ```
  
 ## 驱动流程
-![驱动关系图](../images/net-token/libbpf-rs-kernelmode.png)
+![驱动关系图](https://jimluo.github.io/images/net-token/libbpf-rs-kernelmode.png)
 1. 检查入参struct __sk_buff是否是tcp报文，依次从2层解析判断到4层
 2. 检查tcp报文是否是握手syn包。syn包携带options用于连接双方协商功能
 3. 读取policy map，获得不同策略下的token
